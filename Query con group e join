@@ -41,3 +41,12 @@ FROM `degrees`
 JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
 WHERE `degrees`.`department_id` = 7 
 AND `degrees`.`level` = "magistrale"
+
+3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
+
+SELECT  `courses`.`name`, `courses`.`period`, `courses`.`cfu`
+FROM `courses`
+JOIN `course_teacher` ON `course_teacher`.`course_id` = `courses`.`id`
+WHERE `course_teacher`.`teacher_id` = 44 
+
+
